@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Questrial&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Questrial", sans-serif;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  padding: 20px 0 0 0;
+}
+
+.balance {
+  width: 50%;
+  margin: auto;
+  padding: 20px 30px;
+}
+
+@media screen and (max-width: 800px) {
+  .balance {
+    width: 98%;
+  }
+}
+
+
+.transaction,
+.alltransactions {
+  width: 50%;
+  margin: auto;
+  padding: 10px 30px 10px 30px;
+}
+
+@media screen and (max-width: 800px) {
+  .transaction,
+  .alltransactions {
+    width: 98%;
+  }
+}
+
+.transaction h3,
+.alltransactions h3 {
+  border-bottom: 1px solid #e5e5e5;
+  border-right: 5 px solid #0290e2;;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #6a9bcc;
+}
+
+.cat {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.category {
+  width: 40%;
+  height: 40px;
+  margin: 0 0 10px 10px;
+  border: none;
+  font-size: 16px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 2px;
+  font-size: 16px;
+  line-height: 30px;
+  padding: 0 20px;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 600;
+  background: #0290e2;
+  cursor: pointer;
+  color: #fff;
+}
+
+.none {
+  border: none;
+}
+
+.plus {
+  border-right: 5px solid #25eb6e;
+  background: #faf9f9;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.minus {
+  border-right: 5px solid #f21717;
+  background: #faf9f9;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.item-amount {
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-transaction {
+  display: flex;
+}
+
+.date {
+  font-weight: 100;
+  margin-bottom: 5px;
+}
+
+.item,
+.amount {
+  font-size: 16px;
+  color: #000000;
+}
+
+#s-t {
+  width: 95%;
+}
+
+.edit-delete {
+  width: 5%;
+}
+
+.edit {
+  border-left: 1px solid #fff;
+  padding: 9px 10px;
+  width: 100%;
+  height: 34.5px;
+  font-size: 16px;
+  font-weight: 700;
+  background: #1f8ccb;
+  color: #fff;
+  cursor: pointer;
+}
+
+.close {
+  border-left: 1px solid #fff;
+  padding: 9px 13px;
+  width: 100%;
+  height: 34.5px;
+  font-size: 16px;
+  font-weight: 700;
+  background: #d32424;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal {
+  position: absolute;
+  z-index: 3;
+  right: 27%;
+  transform: translate(-27%, 0);
+  background: #fff;
+  padding: 10px;
+  width: 30%;
+}
+
+@media screen and (max-width: 800px) {
+  .modal {
+    right: 5%;
+    transform: translate(-5%, 0);
+    width: 80%;
+  }
+}
+
+.backdrop {
+  background: #000;
+  opacity: 0.55;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  position: fixed;
+  z-index: 2;
+  bottom: 0%;
+  right: 0%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  color: #f9f4ef;
+}
+.bars {
+  display: none;
+  cursor: pointer;
+  z-index: 3;
+  height: 2rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+.bars svg {
+  height: 2rem;
+  color: black;
+}
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #eaddcf;
+}
+.main {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 80vw;
+  height: 80vh;
+  overflow-y: scroll;
+  box-shadow: 1px 2px 20px grey;
+  background-color: white;
+}
+.expense-form,
+.hide-form {
+  /* background-color: #f25042; */
+  position: fixed;
+  width: 20rem;
+  min-height: 80vh;
+  padding: 3rem 1rem;
+}
+/* .modal-content {
+  background-color: #f25042;
+} */
+#category,
+#title,
+#date,
+#amount {
+  display: block;
+  margin-bottom: 0.5rem;
+  width: 95%;
+  border: 0;
+}
+.hide-form button,
+.expense-form button {
+  border: 0;
+  /* background-color: #fffffe; */
+  color: black;
+  width: 8rem;
+  height: 2rem;
+}
+.Expense-container {
+  z-index: 0;
+  height: 100%;
+  margin-left: 25rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.expense-item {
+  position: relative;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  background-color: #0290e2;
+  border-radius: 10px;
+  width: 20rem;
+  height: 18rem;
+  overflow: hidden;
+}
+.amount {
+  position: relative;
+}
+.amount p {
+  pointer-events: none;
+  color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+}
+#amount {
+  padding-left: 12px;
+}
+.dates {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+.date-modified {
+  margin-left: 1rem;
+}
+.edit-btn svg,
+.delete-btn svg {
+  height: 2rem;
+  padding: 4px;
+  color: white;
+}
+.delete-btn {
+  position: absolute;
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  right: -8px;
+  top: 0;
+}
+.edit-btn {
+  position: absolute;
+  border: 0;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: black;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+@media (max-width: 960px) {
+  .app {
+    display: block;
+    /* background-color: white; */
+  }
+  .main {
+    /* margin: 1rem; */
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    /* background-color: white; */
+  }
+  .bars {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+  }
+  .expense-form {
+    z-index: 1;
+    /* background-color: #f25042; */
+    position: absolute;
+    width: 20rem;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 4rem 1rem;
+    transition: 1s all ease;
+  }
+  .hide-form {
+    z-index: 1;
+    left: -25rem;
+    transition: 1s all ease;
+    height: 100%;
+  }
+  .Expense-container {
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+@media (max-width: 560px) {
+  .expense-form {
+    width: 100%;
+  }
+}
